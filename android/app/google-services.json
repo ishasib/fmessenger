@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1068606398464",
+    "project_id": "chatapptute-cf4e7",
+    "storage_bucket": "chatapptute-cf4e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068606398464:android:ca6491a441edace7f138e5",
+        "android_client_info": {
+          "package_name": "com.example.fmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068606398464-oob6n629e4v7ru9805qglcc4impev1kt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFfwG8rzEol2p9Ob_TsDiyu42OsC1wRb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068606398464-oob6n629e4v7ru9805qglcc4impev1kt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
