@@ -64,8 +64,9 @@ class _ChatPageState extends State<ChatPage> {
         _firebaseAuth.currentUser!.uid,
       ),
       builder: (context, snapshot) {
+        print("sh1234" + snapshot.data!.docs.toString());
         if (snapshot.hasError) {
-          return Text('Error${snapshot.error}');
+          return Text('Errorh${snapshot.error}');
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Text('Loading..');
@@ -82,6 +83,7 @@ class _ChatPageState extends State<ChatPage> {
   // build message item
   Widget _buildMessageItem(DocumentSnapshot document) {
     Map<String, dynamic> data = document.data() as Map<String, dynamic>;
+    print("sh123" + document.toString());
     // align the messages to the right if the sender is the current user, otherwise to the left
     var alignment = (data['senderId'] == _firebaseAuth.currentUser!.uid)
         ? Alignment.centerRight

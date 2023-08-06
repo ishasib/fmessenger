@@ -12,6 +12,7 @@ class ChatService extends ChangeNotifier {
   //send message
   Future<void> sendMessage(String receiverId, String message) async {
     //get current user info
+
     final String currentUserId = _firebaseAuth.currentUser!.uid;
     final String currentUserEmail = _firebaseAuth.currentUser!.email.toString();
     final Timestamp timestamp = Timestamp.now();
@@ -29,6 +30,9 @@ class ChatService extends ChangeNotifier {
     ids.sort(); //sort the ids
     String chatRoomId = ids.join(
         "_"); //combine the ids into a single string to use as a chatroomId
+    print("sh12345" + newMessage.toString());
+    print("sh12345" + chatRoomId.toString());
+    print("sh12345" + currentUserEmail.toString());
 
     //add new message to database
     await _firestore
@@ -44,10 +48,18 @@ class ChatService extends ChangeNotifier {
     List<String> ids = [userId, otherUserId];
     ids.sort();
     String chatRoomId = ids.join("_");
+    print("sh12" +
+        _firestore
+            .collection('chat_rooms')
+            .doc(chatRoomId)
+            .collection('message')
+            .orderBy('timestamp', descending: false)
+            .snapshots()
+            .toString());
     return _firestore
         .collection('chat_rooms')
         .doc(chatRoomId)
-        .collection('messages')
+        .collection('message')
         .orderBy('timestamp', descending: false)
         .snapshots();
   }
